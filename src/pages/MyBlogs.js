@@ -68,7 +68,7 @@ const MyBlogs = () => {
     <>
     <div className="myblogs">
       <Header />
-      <button className="addBlog" onClick={addBlogModal}>
+      <button className="addBlog" onClick={appContextValue.username === "" ? null : addBlogModal}>
         <span>Add Blog</span>
       </button>
       <div className="my_blogs">
