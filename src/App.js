@@ -1,24 +1,54 @@
-import logo from './logo.svg';
+import { useEffect, useReducer } from 'react';
 import './App.css';
+import { auth, db } from './firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import reducer from './reducer';
+import AppContext from './contexts/AppContext';
+import { doc, getDoc } from 'firebase/firestore';
+import { RouterProvider } from 'react-router-dom';
+import app_router from './routes/routes';
 
-function App() {
+const App = () => {
+  const [state, dispatch] = useReducer(reducer, {
+    user: "",
+    username: "",
+  });
+
+  const setUsername = async(user) => {
+    const usersRef = doc(db, "users", user.uid);
+    const username = await getDoc(usersRef);
+    if (username.exists()) {
+      dispatch({
+        type: "SET_USERNAME",
+        username: username.data().username,
+      });
+    }
+  }
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, async(user) => {
+      if (user) {
+        setUsername(user);
+        dispatch({
+          type: "SET_USER",
+          user: user,
+        })
+      } else {
+        dispatch({
+          type: "SIGN_OUT",
+          username: "",
+          user: ""
+        });
+      }
+    })
+  }, [dispatch]);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider value={state}>
+      <div className="app">
+        <RouterProvider router={app_router} />
+      </div>
+    </AppContext.Provider>   
   );
 }
 

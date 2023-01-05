@@ -1,0 +1,15 @@
+.notfound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-family: 'Cookie';
+  font-size: 60px;
+  margin-top: 20%;
+}
+
+.notfound a {
+  color: var(--secondary-color);
+  cursor: pointer;
+}

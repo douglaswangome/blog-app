@@ -1,0 +1,95 @@
+.blog {
+  background-color: #FAFAFA;
+  box-shadow: 0 -1px 0 0 #eee;
+  box-shadow: 1px 0 0 0 #eee;
+  box-shadow: 0 1px 0 0 #eee;
+  box-shadow: 0 0 0 1px #eee;
+  box-shadow: 0 0 0 2px #eee;
+  display: flex;
+  flex-direction: column;
+  margin-block: .4vh;
+  padding: 2vh 1vw;
+  border-radius: 5px;
+  transition: box-shadow .4s ease-in-out;
+}
+
+.blog:hover {
+  box-shadow: 0 0 0 4px #eee;
+}
+
+.blog .blog_head {
+  display: flex;
+  align-items: center;
+}
+
+.blog .blog_head .buttons button {
+  border: none;
+  background-color: transparent;
+  border-radius: 5px;
+  font-size: 13px;
+  padding: 1vh 1vw;
+  margin-inline: .5vw;
+  transition: scale .5s ease-in-out;
+}
+
+.blog .blog_head .buttons button:hover {
+  scale: .96;
+}
+
+.blog .blog_head .buttons button:first-child {
+  color: var(--secondary-color);
+  box-shadow: 0 -1px 0 0 var(--secondary-color);
+  box-shadow: 1px 0 0 0 var(--secondary-color);
+  box-shadow: 0 1px 0 0 var(--secondary-color);
+  box-shadow: 0 0 0 1px var(--secondary-color);
+  box-shadow: 0 0 0 1px var(--secondary-color);
+  margin-left: 0;
+}
+
+.blog .blog_head .buttons button:last-child {
+  color: white;
+  background-color: var(--secondary-color);
+  margin-right: 0;
+}
+
+.blog .blog_head .title {
+  flex: 1;
+  color: var(--secondary-color);
+  font-family: 'Handlee';
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.blog span {
+  margin-block: 1vh;
+}
+
+.blog .details {
+  font-family: 'Handlee';
+  font-size: 18px;
+}
+
+.blog .user_details {
+  display: flex;
+  margin: .5vh 0 .5vh auto;
+  font-family: 'Handlee';
+  font-size: 14px;
+  font-style: italic;
+}
+
+.blog .user_details span:first-child {
+  margin-right: .3vw;
+}
+
+@media screen and (max-width: 575px) {
+  .blog .blog_head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .blog .blog_head .buttons {
+    margin-inline: auto;
+    width: 40%;
+  }
+}

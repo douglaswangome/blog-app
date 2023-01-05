@@ -1,0 +1,22 @@
+.home .blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8vh 1.4vw;
+  margin-top: 1vh;
+  padding: 1vh 3vw;
+}
+
+.home .welcomeText {
+  color: var(--secondary-color);
+  font-family: "Cookie";
+  font-size: 42px;
+  width: fit-content;
+  margin-top: 20%;
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .home .blogs {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

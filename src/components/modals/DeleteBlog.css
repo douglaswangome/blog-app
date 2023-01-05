@@ -1,0 +1,93 @@
+.deleteblog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 50%;
+  margin-top: -100%;
+  margin-left: -100%;
+  backdrop-filter: brightness(.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    margin .8s ease-in-out, 
+    border-radius 1.2s ease-in-out;
+}
+
+.deleteblog.active {
+  border-radius: 0;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.deleteblog .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+  width: 50%;
+  padding: 1vh 1vw;
+}
+
+.deleteblog .form span.title {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-family: 'Cookie';
+}
+
+.deleteblog .form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-block: 1vh;
+}
+
+.deleteblog .form div span {
+  font-family: "Handlee";
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: .4vh;
+}
+
+.deleteblog .form div input, .deleteblog .form div textarea {
+  border: 1px solid black;
+  font-family: "Handlee";
+  font-size: 16px;
+  padding: 1vh .6vw;
+  transition: border-radius .3s ease-in-out;
+  opacity: .7;
+}
+
+.deleteblog .form div input:focus, .deleteblog .form div textarea:focus {
+  outline: none;
+  border-radius: 5px;
+}
+
+.deleteblog .form div textarea {
+  resize: vertical;
+}
+
+.deleteblog .form button {
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 15px;
+  width: 100%;
+  margin-block: .6vh;
+  padding: 1vh 1vw;
+}
+
+@media screen and (max-width: 768px) {
+  .deleteblog .form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .deleteblog .form {
+    width: 96%;
+  }
+}

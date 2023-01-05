@@ -1,0 +1,41 @@
+.my_blogs {
+  position: relative;
+}
+
+.myblogs .addBlog {
+  border: none;
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  font-size: 13px;
+  margin: 1vh 1vw 0 1vw;
+  padding: 1vh 2vw;
+}
+
+.myblogs .my_blogs {
+  display: flex;
+  flex-direction: column;
+  padding: 1vh 3vw;
+}
+
+.myblogs .my_blogs .welcomeText {
+  color: var(--secondary-color);
+  font-family: "Cookie";
+  font-size: 42px;
+  width: fit-content;
+}
+
+.myblogs .my_blogs .blog {
+  border-block: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  margin-block: 1vh;
+}
+
+.myblogs .my_blogs .blog .user_details span:first-child {
+  display: none;
+}
+
+.myblogs .my_blogs .blog .user_details span:last-child::before {
+  content: '~';
+  margin-right: .3vw;
+}

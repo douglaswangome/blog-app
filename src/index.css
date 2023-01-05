@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Courgette&family=Handlee&family=Pacifico&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +18,9 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #388E3C;
 }

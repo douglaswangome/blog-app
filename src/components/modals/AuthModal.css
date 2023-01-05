@@ -1,0 +1,121 @@
+.authModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: brightness(.4);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    margin .6s ease-in-out, 
+    border-radius 1s ease-in-out;
+}
+
+.authModal.inactive {
+  border-radius: 50%;
+  margin-top: -300%;
+}
+
+.authModal .form {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 50%;
+  padding: 1vh 1vw;
+}
+
+.authModal .form .title {
+  display: flex;
+  justify-content: center;
+}
+
+.authModal .form .title div {
+  display: flex;
+  justify-content: center;
+  font-family: "Cookie";
+  font-size: 28px;
+  margin-block: 1vh;
+  padding: 1vh 1vw;
+  color: var(--secondary-color);
+  transition: 
+    background-color .6s ease-in-out,
+    color .4s ease-in-out;
+  cursor: pointer;
+}
+
+.authModal .form .title div.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.authModal .form .content {
+  display: flex;
+  flex-direction: column;
+}
+
+.authModal .form .content div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .6vh;
+  font-family: "Handlee";
+  font-size: 18px;
+}
+
+.authModal .form .content div span {
+  margin-bottom: .1vh;
+  font-weight: 600;
+}
+
+.authModal .form .content div input {
+  font-family: "Handlee";
+  font-size: 16px;
+  padding: .8vh .4vw;
+  border: 1px solid black;
+}
+
+.authModal .form .content div input:focus {
+  outline: none;
+  border-radius: 5px;
+}
+
+.authModal .form .content button {
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 15px;
+  margin-block: .6vh;
+  padding: 1vh 1vw;
+  transition: border-radius .4s ease-in-out;
+}
+
+.authModal .form .content button:hover {
+  border-radius: 5px;
+}
+
+.authModal .form .content button.anon {
+  background-color: #A1A1A1;
+}
+
+.authModal .form .warningMessage {
+  color: var(--secondary-color);
+  width: 100%;
+  margin: .5vh auto;
+  padding-block: 1vh;
+  text-align: center;
+  font-family: "Pacifico";
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .authModal .form {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .authModal .form {
+    width: 96%;
+  }
+}
